@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  vehicleId: MyString
+  routeId: MyString
+  latitude: 9.99
+  longitude: 9.99
+
+two:
+  vehicleId: MyString
+  routeId: MyString
+  latitude: 9.99
+  longitude: 9.99

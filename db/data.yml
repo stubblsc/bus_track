@@ -1,0 +1,9 @@
+
+---
+vehicles:
+  columns:
+  - id
+  - busId
+  - created_at
+  - updated_at
+  records: 

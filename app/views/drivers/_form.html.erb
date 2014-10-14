@@ -1,0 +1,26 @@
+<%= form_for @driver, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :name, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :currentBusID, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :currentBusID, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :currentRouteID, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :currentRouteID, :class => 'text_field' %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                drivers_path, :class => 'btn' %>
+  </div>
+<% end %>

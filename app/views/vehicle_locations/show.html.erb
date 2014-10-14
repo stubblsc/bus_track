@@ -1,0 +1,48 @@
+<%- model_class = VehicleLocation -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:vehicle_id) %>:</strong></dt>
+  <dd><%= Vehicle.find(@vehicle_location.vehicle_id).busId %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:route_id) %>:</strong></dt>
+  <dd><%= @vehicle_location.route_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:latitude) %>:</strong></dt>
+  <dd><%= @vehicle_location.latitude %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:longitude) %>:</strong></dt>
+  <dd><%= @vehicle_location.longitude %></dd>
+</dl>
+<div id="map" style='width: 400px; height: 400px;'></div>
+
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              vehicle_locations_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_vehicle_location_path(@vehicle_location), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              vehicle_location_path(@vehicle_location),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
+
+<script>
+  handler = Gmaps.build('Google', { markers: { maxRandomDistance: null } });
+  handler.buildMap({ provider: {maxZoom: 15}, internal: {id: 'map'}}, function(){
+    markers = handler.addMarkers([
+     {
+      "lat": <%= @vehicle_location.latitude %>,
+      "lng": <%= @vehicle_location.longitude %>,
+      "picture": {
+        "url": "http://bus.csi.muohio.edu/mobile/images/bus.png",
+        "width":  32,
+        "height": 37
+      },
+     }
+    ]);
+    handler.bounds.extendWith(markers);
+    handler.fitMapToBounds();
+  });
+</script>
+

@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  route_id: 1
+  order: 1
+  first_stop_id: 1
+  second_stop_id: 1
+  polyline: MyString
+  distance: 
+  time: 
+
+two:
+  route_id: 1
+  order: 1
+  first_stop_id: 1
+  second_stop_id: 1
+  polyline: MyString
+  distance: 
+  time: 

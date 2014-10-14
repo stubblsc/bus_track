@@ -1,0 +1,50 @@
+<%= form_for @mileage, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :busId, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :busId, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :driverId, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :driverId, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :reason, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :reason, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :garage_out, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :garage_out, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :startMileage, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :startMileage, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :endMileage, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :endMileage, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="conrol-group">
+    <%= f.label :garage_in, :class => 'control-label' %>
+    <div class-"conrols">
+      <%= f.text_field :garage_in, :class => 'text_field' %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                mileages_path, :class => 'btn' %>
+  </div>
+<% end %>

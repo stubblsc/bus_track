@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  riderType: 1
+  count: MyString
+  integer: MyString
+  routeID: 1
+  stopID: 1
+
+two:
+  riderType: 1
+  count: MyString
+  integer: MyString
+  routeID: 1
+  stopID: 1

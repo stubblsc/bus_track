@@ -1,0 +1,50 @@
+<%= form_for @trip, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :route_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.collection_select :route_id, Route.all, :id, :name %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :order, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :order, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :first_stop_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.collection_select :first_stop_id, Stop.all, :id, :name %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :second_stop_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.collection_select :second_stop_id, Stop.all, :id, :name %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :polyline, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :polyline, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :distance, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :distance, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :time, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :time, :class => 'text_field' %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                trips_path, :class => 'btn' %>
+  </div>
+<% end %>

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  busId: 1
+  driverId: 1
+  reason: MyString
+  startMileage: 1
+  endMileage: 1
+
+two:
+  busId: 1
+  driverId: 1
+  reason: MyString
+  startMileage: 1
+  endMileage: 1

@@ -1,0 +1,67 @@
+<%= form_for @frequency, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :route_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.collection_select :route_id, Route.all, :id, :name %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :mon, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.check_box :mon, :class => 'checkbox' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :tues, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.check_box :tues, :class => 'checkbox' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :wed, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.check_box :wed, :class => 'checkbox' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :thur, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.check_box :thur %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :fri, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.check_box :fri, :class => 'checkbox' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :sat, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.check_box :sat, :class => 'checkbox' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :sun, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.check_box :sun, :class => 'checkbox' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :time, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.time_select :time, :ampm => true %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :end_time, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.time_select :end_time, :ampm => true %>
+    </div>
+  </div>
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                frequencies_path, :class => 'btn' %>
+  </div>
+<% end %>
